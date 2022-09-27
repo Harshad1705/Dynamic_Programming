@@ -1,0 +1,44 @@
+
+class Solution 
+{
+    static int[][] arr;
+    
+    public static int solve(int e , int f){
+        
+        if(f==0 || f==1 || e==1)
+	        return f;
+	        
+	   
+	   if(arr[e][f] != -1){
+	       return arr[e][f];
+	   }
+	   
+	        
+	    int mini = Integer.MAX_VALUE;
+	    
+	    
+	    for(int k=1 ; k<=f ; k++){
+	        int temp = 1 + Math.max(solve(e-1,k-1),solve(e,f-k));
+	        
+	        mini = Math.min(mini,temp);
+	    }
+	    
+	    arr[e][f] = mini;
+	    
+	    return mini;
+        
+    }
+    
+    
+    static int eggDrop(int e, int f) 
+	{
+	    
+	    arr = new int[e+1][f+1];
+	    
+	    for(int i=0 ; i<e ; i++){
+	        Arrays.fill(arr[i],-1);
+	    }
+	    
+	    return  solve(e,f);
+	}
+}
