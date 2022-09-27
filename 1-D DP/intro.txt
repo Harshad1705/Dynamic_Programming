@@ -1,0 +1,13 @@
+What - Those who forget the past , are condemed to repeat it.
+
+It is used when you find the optimal soluion by geting optimal solution of its sub-problem.
+and 
+problem contain overlapping subproblem.
+
+Ways to solve question using DP -
+- Top-Down : Recurssion  + Memoization
+- Bottom-Up : Tabulation 
+
+
+Memoization : store the value of subproblem in map / table.
+
